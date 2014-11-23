@@ -1,0 +1,43 @@
+{
+  "name": "grapp-fa-icon",
+  "description": "A web component that displays font awesome icons",
+  "version": "0.0.0",
+  "main": "grapp-fa-icon.html",
+  "license": "MIT",
+  "ignore": [
+    "bin",
+    "build",
+    "lib",
+    "node_modules",
+    "src",
+    "test",
+    "tmpl",
+    "package.json",
+    "**/.*",
+    "**/*.log",
+    "**/*.sublime-*"
+  ],
+  "keywords": [
+    "web-components",
+    "polymer",
+    "coyoho",
+    "grappendorf"
+  ],
+  "authors": [
+    "Dirk Grappendorf <dirk@grappendorf.net> (http://www.grappendorf.net)"
+  ],
+  "homepage": "https://github.com/grappendorf/grapp-fa-icon",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/grappendorf/grapp-fa-icon.git"
+  },
+  "dependencies": {
+    "polymer": "Polymer/polymer#^0.5.1",
+    "font-awesome": "font-awesome#4.2.0"
+  },
+  "devDependencies": {
+    "coffee-script": "latest",
+    "jquery": "latest",
+    "web-component-tester": "Polymer/web-component-tester#latest"
+  }
+}

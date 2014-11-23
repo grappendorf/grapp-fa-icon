@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>grapp-fa-icon basic tests</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <script src="../lib/web-component-tester/browser.js"></script>
+  <script src="../lib/coffee-script/extras/coffee-script.js"></script>
+
+  <link href="../grapp-fa-icon.html" rel="import">
+</head>
+<body>
+
+  <grapp-fa-icon id="element" icon="spinner"></grapp-fa-icon>
+
+  <script type="text/coffeescript">
+
+    describe 'grapp-fa-icon', ->
+
+      it 'should contain shadow DOM with a font awesome <i> element', ->
+        element = document.querySelector '#element'
+        icon = element.shadowRoot.querySelector 'i'
+        expect(icon).not.to.be.null
+        expect(icon.className.split ' ').to.include 'fa'
+
+      it 'should set the "fa-..." class from the "icon" attribute', ->
+        element = document.querySelector '#element'
+        icon = element.shadowRoot.querySelector 'i'
+        expect(icon.className.split ' ').to.include 'fa-spinner'
+
+  </script>
+
+  <script>
+  </script>
+
+</body>
+</html>

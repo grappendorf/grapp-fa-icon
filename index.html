@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <title>grapp-fa-icon web component</title>
+
+  <script src="lib/webcomponentsjs/webcomponents.min.js"></script>
+  <link href="grapp-fa-icon.html" rel="import">
+
+</head>
+
+<body>
+
+  <h1>grapp-fa-icon web component</h1>
+
+  <h2>A web component that displays font awesome icons</h2>
+
+  <p>
+    <a href="test/index.html">Click here to run the tests...</a>
+  </p>
+  <p>
+    <a href="README.md">Click here to read the documentation...</a>
+  </p>
+  <p>
+    <a href="CHANGELOG.md">Click here to read the changelog...</a>
+  </p>
+
+  <h2>Demo</h2>
+
+  <template is="auto-binding">
+
+    <p>
+      <label>Icon:</label>
+      <select value="{{icon}}">
+        <option>spinner</option>
+        <option>check</option>
+        <option>envelope</option>
+      </select>
+    </p>
+    <p>
+      <label>Spinning:</label>
+      <input type="checkbox" checked="{{spin}}">
+    </p>
+
+    <p>
+      <grapp-fa-icon icon="{{icon}}" spin="{{spin}}"></grapp-fa-icon>
+    </p>
+
+  </template>
+
+  <script>
+    var t = document.querySelector('template');
+    t.icon = 'spinner';
+    t.spin = false;
+    t.toggleSpin = function() {
+      t.spin = ! t.spin;
+    }
+  </script>
+
+  <script src="//localhost:35729/livereload.js"></script>
+
+</body>

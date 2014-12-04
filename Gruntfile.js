@@ -1,18 +1,18 @@
 module.exports = function(grunt) {
 
   var mapDotDotUrlToLib = function(req, res, next) {
-    url_parts = req.url.split('/');
+    var url_parts = req.url.split('/');
     if (url_parts.length > 2 && ['lib', 'test'].indexOf(url_parts[1]) == -1) {
       req.url = '/lib' + req.url;
     }
     return next();
-  }
+  };
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('bower.json'),
 
     copyrightSince: function(year) {
-      now = new Date().getFullYear();
+      var now = new Date().getFullYear();
       return year + (now > year ? '-' + now : '');
     },
 
@@ -106,7 +106,7 @@ module.exports = function(grunt) {
         tasks: []
       },
       options: {
-        livereload: true,
+        livereload: true
       }
     },
 

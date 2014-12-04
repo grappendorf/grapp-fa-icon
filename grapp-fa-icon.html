@@ -1,3 +1,4 @@
+ 
 <!--
 Copyright (c) 2014 Dirk Grappendorf, www.grappendorf.net. All rights reserved.
 This code may only be used under the MIT style license found in the file LICENSE.txt.
@@ -13,21 +14,20 @@ Description: A web component that displays font awesome icons
 
 <polymer-element name="grapp-fa-icon" attributes="icon spin">
 
-    <template>
+  <template>
 
-        <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet">
 
-        <i class="fa fa-{{icon}} {{spin ? 'fa-spin' : ''}}"></i>
+    <i class="fa fa-{{icon}} {{spin ? 'fa-spin' : ''}}"></i>
 
-    </template>
+  </template>
 
-    <script type="text/javascript">
-        (function() {
-            Polymer('grapp-fa-icon', {
-                spin: false
-            });
+<script type="text/javascript">(function() {
+  Polymer('grapp-fa-icon', {
+    spin: false
+  });
 
-        }).call(this);
-    </script>
+}).call(this);
+</script>
 
 </polymer-element>

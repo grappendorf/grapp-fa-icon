@@ -4,7 +4,7 @@ grapp-fa-icon
 A web component that displays [font awesome icons](http://fontawesome.io/).
 
 Attributes
-==========
+----------
 
   * **icon**
 

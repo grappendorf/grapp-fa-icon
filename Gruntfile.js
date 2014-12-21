@@ -44,7 +44,10 @@ module.exports = function(grunt) {
     },
 
     coffeelint: {
-      src: ['src/*.coffee']
+      src: ['src/*.coffee'],
+      options: {
+        max_line_length: { level: 'ignore' }
+      }
     },
 
     coffee: {

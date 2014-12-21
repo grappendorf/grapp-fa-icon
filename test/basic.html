@@ -14,6 +14,8 @@
 <body>
 
   <grapp-fa-icon id="element" icon="spinner"></grapp-fa-icon>
+  <grapp-fa-icon id="element-inverse" icon="flag" inverse></grapp-fa-icon>
+  <grapp-fa-icon id="element-2x" icon="flag" size="2x"></grapp-fa-icon>
 
   <script type="text/coffeescript">
 
@@ -29,6 +31,16 @@
         element = document.querySelector '#element'
         icon = element.shadowRoot.querySelector 'i'
         expect(icon.className.split ' ').to.include 'fa-spinner'
+
+      it 'should set the "fa-2x" class if the size attribute is set to "2x"', ->
+        element = document.querySelector '#element-2x'
+        icon = element.shadowRoot.querySelector 'i'
+        expect(icon.className.split ' ').to.include 'fa-2x'
+
+      it 'should set the "fa-inverse" class if the inverse attribute is set', ->
+        element = document.querySelector '#element-inverse'
+        icon = element.shadowRoot.querySelector 'i'
+        expect(icon.className.split ' ').to.include 'fa-inverse'
 
   </script>
 

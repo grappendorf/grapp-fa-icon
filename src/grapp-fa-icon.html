@@ -10,18 +10,32 @@ Description: <%= pkg.description %>
 <link href="../polymer/polymer.html" rel="import">
 <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet">
 
-<polymer-element name="grapp-fa-icon" attributes="icon spin">
+
+<polymer-element name="grapp-fa-icon" attributes="icon spin size inverse">
 
   <template>
 
     <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet">
 
-    <i class="fa fa-{{icon}} {{spin ? 'fa-spin' : ''}}"></i>
+    <i class="{{computeClass(icon, spin, size, inverse)}}"></i>
 
   </template>
 
   <!-- build:script inline dist -->
   <script src="grapp-fa-icon.js"></script>
   <!-- /build -->
+
+</polymer-element>
+
+
+<polymer-element name="grapp-fa-stack" attributes="size" noscript>
+
+  <template>
+    <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
+    <span class="fa-stack {{size ? 'fa-' + size : ''}}">
+      <content select="grapp-fa-icon"></content>
+    </span>
+  </template>
 
 </polymer-element>

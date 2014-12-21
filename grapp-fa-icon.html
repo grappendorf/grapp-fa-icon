@@ -12,22 +12,44 @@ Description: A web component that displays font awesome icons
 <link href="../polymer/polymer.html" rel="import">
 <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet">
 
-<polymer-element name="grapp-fa-icon" attributes="icon spin">
+
+<polymer-element name="grapp-fa-icon" attributes="icon spin size inverse">
 
   <template>
 
     <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet">
 
-    <i class="fa fa-{{icon}} {{spin ? 'fa-spin' : ''}}"></i>
+    <i class="{{computeClass(icon, spin, size, inverse)}}"></i>
 
   </template>
 
 <script type="text/javascript">(function() {
   Polymer('grapp-fa-icon', {
-    spin: false
+    icon: null,
+    spin: false,
+    size: null,
+    inverse: false,
+    computeClass: function(icon, spin, size, inverse) {
+      var stacked;
+      stacked = this.parentNode.tagName === 'GRAPP-FA-STACK';
+      return ("fa fa-" + this.icon) + (spin ? " fa-spin" : "") + (stacked ? (size ? " fa-stack-" + size : " fa-stack-1x") : (size ? " fa-" + size : "")) + (inverse ? " fa-inverse" : "");
+    }
   });
 
 }).call(this);
 </script>
+
+</polymer-element>
+
+
+<polymer-element name="grapp-fa-stack" attributes="size" noscript>
+
+  <template>
+    <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
+    <span class="fa-stack {{size ? 'fa-' + size : ''}}">
+      <content select="grapp-fa-icon"></content>
+    </span>
+  </template>
 
 </polymer-element>

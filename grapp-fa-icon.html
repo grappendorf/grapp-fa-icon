@@ -1,6 +1,6 @@
- 
+
 <!--
-Copyright (c) 2014 Dirk Grappendorf, www.grappendorf.net. All rights reserved.
+Copyright (c) 2014-2015 Dirk Grappendorf, www.grappendorf.net. All rights reserved.
 This code may only be used under the MIT style license found in the file LICENSE.txt.
 
 Element: grapp-fa-icon
@@ -12,26 +12,37 @@ Description: A web component that displays font awesome icons
 <link href="../polymer/polymer.html" rel="import">
 <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet">
 
-
-<polymer-element name="grapp-fa-icon" attributes="icon spin size inverse">
+<dom-module id="grapp-fa-icon">
 
   <template>
-
     <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet">
-
-    <i class="{{computeClass(icon, spin, size, inverse)}}"></i>
-
+    <i class$="[[_computeClass(icon, spin, size, inverse)]]"></i>
   </template>
 
 <script type="text/javascript">(function() {
-  Polymer('grapp-fa-icon', {
-    icon: null,
-    spin: false,
-    size: null,
-    inverse: false,
-    computeClass: function(icon, spin, size, inverse) {
+  Polymer({
+    is: 'grapp-fa-icon',
+    properties: {
+      icon: {
+        type: String,
+        value: ''
+      },
+      spin: {
+        type: Boolean,
+        value: false
+      },
+      size: {
+        type: String,
+        value: ''
+      },
+      inverse: {
+        type: Boolean,
+        value: false
+      }
+    },
+    _computeClass: function(icon, spin, size, inverse) {
       var stacked;
-      stacked = this.parentNode.tagName === 'GRAPP-FA-STACK';
+      stacked = Polymer.dom(this).parentNode.tagName === 'GRAPP-FA-STACK';
       return ("fa fa-" + this.icon) + (spin ? " fa-spin" : "") + (stacked ? (size ? " fa-stack-" + size : " fa-stack-1x") : (size ? " fa-" + size : "")) + (inverse ? " fa-inverse" : "");
     }
   });
@@ -39,17 +50,32 @@ Description: A web component that displays font awesome icons
 }).call(this);
 </script>
 
-</polymer-element>
+</dom-module>
 
-
-<polymer-element name="grapp-fa-stack" attributes="size" noscript>
+<dom-module id="grapp-fa-stack">
 
   <template>
     <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet">
-
-    <span class="fa-stack {{size ? 'fa-' + size : ''}}">
+    <span class$="[[_computeClass(size)]]">
       <content select="grapp-fa-icon"></content>
     </span>
   </template>
 
-</polymer-element>
+<script type="text/javascript">(function() {
+  Polymer({
+    is: 'grapp-fa-stack',
+    properties: {
+      size: {
+        type: String,
+        value: ''
+      }
+    },
+    _computeClass: function(size) {
+      return 'fa-stack' + (size ? ' fa-' + size : '');
+    }
+  });
+
+}).call(this);
+</script>
+
+</dom-module>

@@ -1,4 +1,4 @@
- <!-- build:process -->
+<!-- build:process -->
 <!--
 <%= copyright %>
 Element: <%= pkg.name %>
@@ -7,35 +7,33 @@ Description: <%= pkg.description %>
 -->
 <!-- /build -->
 
-<link href="../polymer/polymer.html" rel="import">
-<link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet">
+<link href="../lib/polymer/polymer.html" rel="import">
+<link href="../lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 
-
-<polymer-element name="grapp-fa-icon" attributes="icon spin size inverse">
+<dom-module id="grapp-fa-icon">
 
   <template>
-
-    <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet">
-
-    <i class="{{computeClass(icon, spin, size, inverse)}}"></i>
-
+    <link href="../lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <i class$="[[_computeClass(icon, spin, size, inverse)]]"></i>
   </template>
 
-  <!-- build:script inline dist -->
+  <!-- build:script inline dist_fa -->
   <script src="grapp-fa-icon.js"></script>
   <!-- /build -->
 
-</polymer-element>
+</dom-module>
 
-
-<polymer-element name="grapp-fa-stack" attributes="size" noscript>
+<dom-module id="grapp-fa-stack">
 
   <template>
-    <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet">
-
-    <span class="fa-stack {{size ? 'fa-' + size : ''}}">
+    <link href="../lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <span class$="[[_computeClass(size)]]">
       <content select="grapp-fa-icon"></content>
     </span>
   </template>
 
-</polymer-element>
+  <!-- build:script inline dist_fa_stack -->
+  <script src="grapp-fa-icon.js"></script>
+  <!-- /build -->
+
+</dom-module>

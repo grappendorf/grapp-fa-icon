@@ -6,10 +6,11 @@
   <title>grapp-fa-icon stacked tests</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
+  <script src='../lib/webcomponentsjs/webcomponents-lite.min.js'></script>
   <script src="../lib/web-component-tester/browser.js"></script>
   <script src="../lib/coffee-script/extras/coffee-script.js"></script>
 
-  <link href="../grapp-fa-icon.html" rel="import">
+  <link href="../build/grapp-fa-icon.html" rel="import">
 </head>
 <body>
 
@@ -22,9 +23,10 @@
 
     describe 'grapp-fa-stack', ->
 
-      it 'should contain shadow DOM with font awesome <span> element', ->
+      it 'should contain local DOM with font awesome <span> element', ->
         element = document.querySelector '#stack-element'
-        span = element.shadowRoot.querySelector 'span'
+        console.log element
+        span = element.querySelector 'span'
         expect(span).not.to.be.null
         expect(span.className.split ' ').to.include 'fa-stack'
 
@@ -32,19 +34,16 @@
 
       it 'should have set the fa-stack-1x class', ->
         element = document.querySelector '#icon-element'
-        icon = element.shadowRoot.querySelector 'i'
+        icon = element.querySelector 'i'
         expect(icon.className.split ' ').to.include 'fa-stack-1x'
 
     describe 'grapp-fa-icon inside a grapp-fa-stack with a size attribute "2x"', ->
 
       it 'should have set the fa-stack-2x class', ->
         element = document.querySelector '#icon-element-with-size'
-        icon = element.shadowRoot.querySelector 'i'
+        icon = element.querySelector 'i'
         expect(icon.className.split ' ').to.include 'fa-stack-2x'
 
-  </script>
-
-  <script>
   </script>
 
 </body>

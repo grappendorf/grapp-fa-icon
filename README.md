@@ -3,7 +3,9 @@ grapp-fa-icon
 
 A web component that displays [font awesome icons](http://fontawesome.io/).
 
-Attributes
+Compatible with Polymer 1.0+
+
+Properties
 ----------
 
   * **icon**
@@ -49,7 +51,7 @@ If you want to stack icons, wrapp them with this element:
 </grapp-fa-stack>
 ```
 
-Attributes
+Properties
 ----------
 
   * **size**

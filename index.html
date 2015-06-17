@@ -2,12 +2,9 @@
 <html>
 
 <head>
-
   <title>grapp-fa-icon web component</title>
-
-  <script src="lib/webcomponentsjs/webcomponents.min.js"></script>
-  <link href="grapp-fa-icon.html" rel="import">
-
+  <script src='lib/webcomponentsjs/webcomponents-lite.min.js'></script>
+  <link href="build/grapp-fa-icon.html" rel="import">
 </head>
 
 <body>
@@ -28,11 +25,11 @@
 
   <h2>Demo</h2>
 
-  <template is="auto-binding">
+  <template is="dom-bind">
 
     <p>
       <label>Icon:</label>
-      <select value="{{icon}}">
+      <select value="{{icon::change}}">
         <option>spinner</option>
         <option>check</option>
         <option>envelope</option>
@@ -40,7 +37,7 @@
     </p>
     <p>
       <label>Spinning:</label>
-      <input type="checkbox" checked="{{spin}}">
+      <input type="checkbox" checked="{{spin::change}}">
     </p>
 
     <p>

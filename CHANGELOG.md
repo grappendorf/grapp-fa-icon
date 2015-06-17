@@ -1,3 +1,12 @@
+<a name="0.1.0"></a>
+## 0.1.0 (2015-06-17)
+
+
+#### Features
+
+* Upgrade to Polymer 1.0 ([4768ff74](http://github.com/grappendorf/grapp-fa-icon/commit/4768ff749c8d6ae8510eaa99dc34aef8e2c74c8b))
+
+
 <a name="0.0.2"></a>
 ### 0.0.2 (2014-12-22)
 

@@ -1,7 +1,7 @@
 {
   "name": "grapp-fa-icon",
   "description": "A web component that displays font awesome icons",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "main": "grapp-fa-icon.html",
   "license": "MIT",
   "ignore": [

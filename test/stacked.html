@@ -25,7 +25,6 @@
 
       it 'should contain local DOM with font awesome <span> element', ->
         element = document.querySelector '#stack-element'
-        console.log element
         span = element.querySelector 'span'
         expect(span).not.to.be.null
         expect(span.className.split ' ').to.include 'fa-stack'

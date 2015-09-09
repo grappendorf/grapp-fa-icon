@@ -12,8 +12,9 @@ Description: <%= pkg.description %>
 
 <dom-module id="grapp-fa-icon">
 
+  <link rel="import" type="css" href="../lib/font-awesome/css/font-awesome.min.css">
+
   <template>
-    <link href="../lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <i class$="[[_computeClass(icon, spin, size, inverse)]]"></i>
   </template>
 
@@ -25,8 +26,9 @@ Description: <%= pkg.description %>
 
 <dom-module id="grapp-fa-stack">
 
+  <link rel="import" type="css" href="../lib/font-awesome/css/font-awesome.min.css">
+
   <template>
-    <link href="../lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <span class$="[[_computeClass(size)]]">
       <content select="grapp-fa-icon"></content>
     </span>

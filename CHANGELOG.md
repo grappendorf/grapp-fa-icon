@@ -1,3 +1,12 @@
+<a name="0.1.1"></a>
+### 0.1.1 (2015-09-09)
+
+
+#### Bug Fixes
+
+* wrong stylesheet import ([d4791ae1](http://github.com/grappendorf/grapp-fa-icon/commit/d4791ae1e51da59a6980ffc32b405c47bed37819))
+
+
 <a name="0.1.0"></a>
 ## 0.1.0 (2015-06-17)
 

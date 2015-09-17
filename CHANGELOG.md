@@ -1,3 +1,12 @@
+<a name="0.1.2"></a>
+### 0.1.2 (2015-09-17)
+
+
+#### Bug Fixes
+
+* workaround: wct currently expects to find some bower components in the "componen ([86d54104](http://github.com/grappendorf/grapp-fa-icon/commit/86d54104a66f0ac276ccc14026348a36dc949c11))
+
+
 <a name="0.1.1"></a>
 ### 0.1.1 (2015-09-09)
 

@@ -7,8 +7,7 @@ Description: <%= pkg.description %>
 -->
 <!-- /build -->
 
-<link href="../lib/polymer/polymer.html" rel="import">
-<link href="../lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+<link rel="import" href="../lib/polymer/polymer.html">
 
 <dom-module id="grapp-fa-icon">
 
@@ -18,7 +17,7 @@ Description: <%= pkg.description %>
     <i class$="[[_computeClass(icon, spin, size, inverse)]]"></i>
   </template>
 
-  <!-- build:script inline dist_fa -->
+  <!-- build:script inline grapp-fa-icon -->
   <script src="grapp-fa-icon.js"></script>
   <!-- /build -->
 
@@ -34,8 +33,8 @@ Description: <%= pkg.description %>
     </span>
   </template>
 
-  <!-- build:script inline dist_fa_stack -->
-  <script src="grapp-fa-icon.js"></script>
+  <!-- build:script inline grapp-fa-stack -->
+  <script src="grapp-fa-stack.js"></script>
   <!-- /build -->
 
 </dom-module>

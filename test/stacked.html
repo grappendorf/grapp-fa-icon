@@ -5,26 +5,30 @@
   <meta charset="UTF-8">
   <title>grapp-fa-icon stacked tests</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-
   <script src='../lib/webcomponentsjs/webcomponents-lite.min.js'></script>
   <script src="../lib/web-component-tester/browser.js"></script>
+  <script src="../lib/test-fixture/test-fixture-mocha.js"></script>
   <script src="../lib/coffee-script/extras/coffee-script.js"></script>
-
-  <link href="../build/grapp-fa-icon.html" rel="import">
+  <link rel="import" href="../lib/test-fixture/test-fixture.html">
+  <link rel="import" href="../build/grapp-fa-icon.html">
 </head>
 <body>
 
-  <grapp-fa-stack id="stack-element">
-    <grapp-fa-icon id="icon-element" icon="square-o"></grapp-fa-icon>
-    <grapp-fa-icon id="icon-element-with-size" size="2x" icon="flag"></grapp-fa-icon>
-  </grapp-fa-stack>
+  <test-fixture id="element-stack">
+    <template>
+      <grapp-fa-stack>
+        <grapp-fa-icon id="icon-element" icon="square-o"></grapp-fa-icon>
+        <grapp-fa-icon id="icon-element-with-size" size="2x" icon="flag"></grapp-fa-icon>
+      </grapp-fa-stack>
+    </template>
+  </test-fixture>
 
   <script type="text/coffeescript">
 
     describe 'grapp-fa-stack', ->
 
       it 'should contain local DOM with font awesome <span> element', ->
-        element = document.querySelector '#stack-element'
+        element = fixture 'element-stack'
         span = element.querySelector 'span'
         expect(span).not.to.be.null
         expect(span.className.split ' ').to.include 'fa-stack'
@@ -32,15 +36,15 @@
     describe 'grapp-fa-icon inside a grapp-fa-stack', ->
 
       it 'should have set the fa-stack-1x class', ->
-        element = document.querySelector '#icon-element'
-        icon = element.querySelector 'i'
+        element = fixture 'element-stack'
+        icon = element.querySelector '#icon-element i'
         expect(icon.className.split ' ').to.include 'fa-stack-1x'
 
     describe 'grapp-fa-icon inside a grapp-fa-stack with a size attribute "2x"', ->
 
       it 'should have set the fa-stack-2x class', ->
-        element = document.querySelector '#icon-element-with-size'
-        icon = element.querySelector 'i'
+        element = fixture 'element-stack'
+        icon = element.querySelector '#icon-element-with-size i'
         expect(icon.className.split ' ').to.include 'fa-stack-2x'
 
   </script>

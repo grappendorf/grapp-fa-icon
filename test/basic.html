@@ -5,41 +5,55 @@
   <meta charset="UTF-8">
   <title>grapp-fa-icon basic tests</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-
   <script src='../lib/webcomponentsjs/webcomponents-lite.min.js'></script>
   <script src="../lib/web-component-tester/browser.js"></script>
+  <script src="../lib/test-fixture/test-fixture-mocha.js"></script>
   <script src="../lib/coffee-script/extras/coffee-script.js"></script>
-
-  <link href="../build/grapp-fa-icon.html" rel="import">
+  <link rel="import" href="../lib/test-fixture/test-fixture.html">
+  <link rel="import" href="../build/grapp-fa-icon.html">
 </head>
 <body>
 
-  <grapp-fa-icon id="element" icon="spinner"></grapp-fa-icon>
-  <grapp-fa-icon id="element-inverse" icon="flag" inverse></grapp-fa-icon>
-  <grapp-fa-icon id="element-2x" icon="flag" size="2x"></grapp-fa-icon>
+  <test-fixture id="element">
+    <template>
+      <grapp-fa-icon icon="spinner"></grapp-fa-icon>
+    </template>
+  </test-fixture>
+
+  <test-fixture id="element-inverse">
+    <template>
+      <grapp-fa-icon icon="flag" inverse></grapp-fa-icon>
+    </template>
+  </test-fixture>
+
+  <test-fixture id="element-2x">
+    <template>
+      <grapp-fa-icon icon="flag" size="2x"></grapp-fa-icon>
+    </template>
+  </test-fixture>
 
   <script type="text/coffeescript">
 
     describe 'grapp-fa-icon', ->
 
       it 'should contain shadow DOM with a font awesome <i> element', ->
-        element = document.querySelector '#element'
+        element = fixture 'element'
         icon = element.querySelector 'i'
         expect(icon).not.to.be.null
         expect(icon.className.split ' ').to.include 'fa'
 
       it 'should set the "fa-..." class from the "icon" attribute', ->
-        element = document.querySelector '#element'
+        element = fixture 'element'
         icon = element.querySelector 'i'
         expect(icon.className.split ' ').to.include 'fa-spinner'
 
       it 'should set the "fa-2x" class if the size attribute is set to "2x"', ->
-        element = document.querySelector '#element-2x'
+        element = fixture 'element-2x'
         icon = element.querySelector 'i'
         expect(icon.className.split ' ').to.include 'fa-2x'
 
       it 'should set the "fa-inverse" class if the inverse attribute is set', ->
-        element = document.querySelector '#element-inverse'
+        element = fixture 'element-inverse'
         icon = element.querySelector 'i'
         expect(icon.className.split ' ').to.include 'fa-inverse'
 

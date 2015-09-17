@@ -58,8 +58,8 @@ module.exports = function(grunt) {
         dest: './build/',
         options: {
           scripts: {
-            dist_fa: ['build/grapp-fa-icon.js'],
-            dist_fa_stack: ['build/grapp-fa-stack.js']
+            'grapp-fa-icon': ['build/grapp-fa-icon.js'],
+            'grapp-fa-stack': ['build/grapp-fa-stack.js']
           },
           styles: {
             dist: ['build/*.css']
